@@ -15,7 +15,7 @@ import java.util.List;
 @Dao
 public interface FavDao {
 
-    @Query("SELECT * FROM task ORDER BY favoriteMovie")
+    @Query("SELECT * FROM task ORDER BY favorite")
     LiveData<FavoriteEntry> loadAllTasks();
 
     @Insert

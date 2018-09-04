@@ -13,24 +13,21 @@ public class FavoriteEntry {
         @PrimaryKey(autoGenerate = true)
         private int id;
         private String description;
+        @ColumnInfo(name = "favorite")
         private Boolean favoriteMovie;
-        @ColumnInfo(name = "updated_at")
-        private Date updatedAt;
 
         // use the Ignore annotation so Room knows that it has to use the other constructor instead
         @Ignore
-        public FavoriteEntry(String description, Date updatedAt , Boolean favoriteMovie) {
+        public FavoriteEntry(String description, int id , Boolean favoriteMovie) {
             this.description = description;
             this.favoriteMovie=favoriteMovie;
-            this.updatedAt = updatedAt;
+            this.id=id;
         }
 
-        public FavoriteEntry(int id, String description, Boolean favoriteMovie, Date updatedAt) {
+        public FavoriteEntry(int id, String description, Boolean favoriteMovie) {
             this.id = id;
             this.favoriteMovie=favoriteMovie;
             this.description = description;
-            this.updatedAt = updatedAt;
-
         }
 //Getter and Setter method
         public int getId() {
@@ -47,14 +44,6 @@ public class FavoriteEntry {
 
         public void setDescription(String description) {
             this.description = description;
-        }
-
-        public Date getUpdatedAt() {
-            return updatedAt;
-        }
-
-        public void setUpdatedAt(Date updatedAt) {
-            this.updatedAt = updatedAt;
         }
 
         public Boolean getFavoriteMovie() {

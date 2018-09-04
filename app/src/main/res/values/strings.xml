@@ -4,4 +4,6 @@
     <string name="top_rated">Top Rated</string>
     <string name="overview">overview</string>
     <string name="reload">Reload</string>
+    <string name="action_favorites">Favorites</string>
+
 </resources>

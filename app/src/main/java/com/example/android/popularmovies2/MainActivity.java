@@ -2,6 +2,7 @@ package com.example.android.popularmovies2;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
-    private void loadMovieData() {
+    public void loadMovieData() {
         showData();
         String data = NetworkUtils.getResponseFromHttpUrl();
         new AsynTaskMethod().execute(data);
@@ -195,6 +196,12 @@ public class MainActivity extends AppCompatActivity {
             //set the Url to top rated
             loadTopMovieData();
             return true;
+        } if (id == R.id.favorites){
+            //open the favorites
+            Intent favoritesIntent = new Intent(this,FavoritesActivity.class);
+            startActivity(favoritesIntent);
+            return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

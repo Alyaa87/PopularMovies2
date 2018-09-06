@@ -12,7 +12,7 @@ import android.widget.CheckBox;
 import com.example.android.popularmovies2.Database.AddTaskViewModel;
 import com.example.android.popularmovies2.Database.AddViewModelFactory;
 import com.example.android.popularmovies2.Database.AppDatabase;
-import com.example.android.popularmovies2.Database.FavoriteEntry;
+import com.example.android.popularmovies2.Database.FavoriteEntityy;
 
 public class FavoritesActivity extends AppCompatActivity {
     // Extra for the task ID to be received in the intent
@@ -49,9 +49,9 @@ public class FavoritesActivity extends AppCompatActivity {
                 final AddTaskViewModel viewModel
                         = ViewModelProviders.of(this, factory).get(AddTaskViewModel.class);
 
-                viewModel.getTask().observe(this, new Observer<FavoriteEntry>() {
+                viewModel.getTask().observe(this, new Observer<FavoriteEntityy>() {
                     @Override
-                    public void onChanged(@Nullable FavoriteEntry taskEntry) {
+                    public void onChanged(@Nullable FavoriteEntityy taskEntry) {
                         viewModel.getTask().removeObserver(this);
                         populateUI(taskEntry);
                     }
@@ -71,7 +71,7 @@ public class FavoritesActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void populateUI(FavoriteEntry task) {
+    private void populateUI(FavoriteEntityy task) {
         if (task == null) {
             return;
         }

@@ -5,5 +5,6 @@
     <string name="overview">overview</string>
     <string name="reload">Reload</string>
     <string name="action_favorites">Favorites</string>
+    <string name="FavoriteEntityy">SELECT * FROM</string>
 
 </resources>

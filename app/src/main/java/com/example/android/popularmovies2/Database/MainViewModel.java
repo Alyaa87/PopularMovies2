@@ -10,7 +10,7 @@ public class MainViewModel extends AndroidViewModel {
     // Constant for logging
     private static final String TAG = MainViewModel.class.getSimpleName();
 
-    private LiveData<FavoriteEntry> tasks;
+    private LiveData<FavoriteEntityy> tasks;
 
     public MainViewModel(Application application) {
         super(application);
@@ -19,7 +19,7 @@ public class MainViewModel extends AndroidViewModel {
         tasks = database.mFavDao().loadAllTasks();
     }
 
-    public LiveData<FavoriteEntry> getTasks() {
+    public LiveData<FavoriteEntityy> getTasks() {
         return tasks;
     }
 }

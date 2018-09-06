@@ -8,7 +8,7 @@ import android.util.Log;
 
 import com.example.android.popularmovies2.FavDao;
 
-@Database(entities = {FavoriteEntry.class}, version = 1, exportSchema = false)
+@Database(entities = {FavoriteEntityy.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String LOG_TAG = AppDatabase.class.getSimpleName();
     private static final Object LOCK = new Object();

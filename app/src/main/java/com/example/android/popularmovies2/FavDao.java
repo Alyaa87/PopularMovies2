@@ -8,25 +8,23 @@ import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.example.android.popularmovies2.Database.FavoriteEntry;
-
-import java.util.List;
+import com.example.android.popularmovies2.Database.FavoriteEntityy;
 
 @Dao
 public interface FavDao {
 
-    @Query("SELECT * FROM task ORDER BY favorite")
-    LiveData<FavoriteEntry> loadAllTasks();
+    @Query("SELECT * from favorite ORDER By `favorite-movie-name`")
+     LiveData<FavoriteEntityy> loadAllTasks();
 
     @Insert
-    void insertTask(FavoriteEntry favoriteEntry);
+    void insertTask(FavoriteEntityy favoriteEntityy);
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    void updateTask(FavoriteEntry favoriteEntry);
+    void updateTask(FavoriteEntityy favoriteEntityy);
 
     @Delete
-    void deleteTask(FavoriteEntry favoriteEntry);
+    void deleteTask(FavoriteEntityy favoriteEntityy);
 
-    @Query("SELECT * FROM task WHERE id = :id")
-    LiveData<FavoriteEntry> loadTaskById(int id);
+    @Query("SELECT * from favorite WHERE id = :id")
+    LiveData<FavoriteEntityy> loadTaskById(int id);
 }
